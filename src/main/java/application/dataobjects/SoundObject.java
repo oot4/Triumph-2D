@@ -27,7 +27,12 @@ public class SoundObject implements Serializable, IAssetDataObject
     private final String PATH;
 
     /**
-     * Privately creates a new SoundObject instance.
+     * The path to the location of sound resources.
+     */
+    public static final String SOUND_DIR = "src/main/java/assets/sounds/";
+
+    /**
+     * Privately creates a new sound object instance.
      *
      * @param key  A key value as a string. Should be the name of the asset
      *             file.
@@ -55,7 +60,7 @@ public class SoundObject implements Serializable, IAssetDataObject
         String subPath;
 
         subPath = type.toString() + "/" + key;
-        path = "/assets/sound/" + subPath + ".wav";
+        path = "/assets/sounds/" + subPath;
 
         return new SoundObject( key, path );
     }
