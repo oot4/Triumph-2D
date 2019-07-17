@@ -5,24 +5,26 @@
  */
 package application.dataobjects.abstracts;
 
-import application.dataobjects.interfaces.IDimensions;
+import application.dataobjects.interfaces.IDimensionGroup;
 
 /**
  * Abstract class for dimensional data.
  *
  * @author Oge Tasie
  */
-public abstract class AbstractDimensions implements IDimensions
+public abstract class AbstractDimensionGroup implements IDimensionGroup
 {
 
     /**
      * A width dimension.
      */
     private final int WIDTH;
+
     /**
      * A height dimension.
      */
     private final int HEIGHT;
+
     /**
      * A scale dimension. Is applied to a width and height.
      */
@@ -35,7 +37,7 @@ public abstract class AbstractDimensions implements IDimensions
      * @param height A raw height value before scaling.
      * @param scale  A scaling factor.
      */
-    public AbstractDimensions( int width, int height, int scale )
+    public AbstractDimensionGroup( int width, int height, int scale )
     {
         WIDTH = width;
         HEIGHT = height;
