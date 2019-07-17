@@ -6,7 +6,7 @@ apply plugin: 'application'
 description = 'Triumph 2D (Alpha)'
     group = 'vipersourcing'
 
-mainClassName = '.ApplicationEntryPoint'
+mainClassName = 'application.NewMain'
 
 repositories {
     jcenter()
