@@ -10,7 +10,7 @@ package application.dataobjects.interfaces;
  *
  * @author Oge Tasie
  */
-public interface IDimensions
+public interface IDimensionGroup
 {
 
     /**
