@@ -22,14 +22,14 @@ public class AssetKeyStore implements IAssetKeyStore
      * An array contain asset file paths.
      */
     private final File[] resourceFiles;
-    
+
     /**
      * The type of assets stored in this key store.
      */
     private final String resourceType;
 
     /**
-     * Creates a new instance of an asset key store.
+     * Privately creates a new instance of an asset key store.
      *
      * @param directory     The root directory of the files to generate keys
      *                      for.
@@ -38,10 +38,27 @@ public class AssetKeyStore implements IAssetKeyStore
      * @param fileExtension The file extension of the resources this asset key
      *                      store will contain.
      */
-    public AssetKeyStore( String directory, String type, FileExtensionType fileExtension )
+    private AssetKeyStore( String directory, String type, FileExtensionType fileExtension )
     {
         resourceType = type;
         resourceFiles = generateResourceKeys( directory, type, fileExtension );
+    }
+
+    /**
+     * Creates a new asset key store.
+     *
+     * @param directory     The root directory of the files to generate keys
+     *                      for.
+     * @param type          The type of resource this asset key store will
+     *                      contain.
+     * @param fileExtension The file extension of the resources this asset key
+     *                      store will contain.
+     *
+     * @return A new instance of an asset key store.
+     */
+    public static AssetKeyStore create( String directory, String type, FileExtensionType fileExtension )
+    {
+        return new AssetKeyStore( directory, type, fileExtension );
     }
 
     /**
