@@ -5,14 +5,14 @@
  */
 package application.dataobjects;
 
-import application.dataobjects.abstracts.AbstractDimensions;
+import application.dataobjects.abstracts.AbstractDimensionGroup;
 
 /**
  * Class representing the dimensions for images on a sprite-sheet.
  *
  * @author Oge Tasie
  */
-public class SpriteDimensions extends AbstractDimensions
+public class SpriteDimensionGroup extends AbstractDimensionGroup
 {
 
     /**
@@ -22,7 +22,7 @@ public class SpriteDimensions extends AbstractDimensions
      * @param height Height of a image on a sprite-sheet
      * @param scale  Scaling factor to apply to an image on a sprite-sheet.
      */
-    public SpriteDimensions( int width, int height, int scale )
+    public SpriteDimensionGroup( int width, int height, int scale )
     {
         super( width, height, scale );
     }
