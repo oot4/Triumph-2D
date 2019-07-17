@@ -55,4 +55,5 @@ public abstract class AbstractDimensionGroup implements IDimensionGroup
     {
         return HEIGHT * SCALE;
     }
+    
 }

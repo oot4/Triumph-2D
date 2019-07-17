@@ -12,6 +12,7 @@ package application.dataobjects;
  */
 public enum FileExtensionType
 {
+
     /**
      * File extension for images.
      */
@@ -21,4 +22,5 @@ public enum FileExtensionType
      * File extension for audio.
      */
     wav
+
 }

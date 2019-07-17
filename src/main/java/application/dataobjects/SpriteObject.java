@@ -75,6 +75,16 @@ public class SpriteObject implements Serializable, IAssetDataObject
         return new SpriteObject( key, path, dimensions );
     }
 
+    /**
+     * A data object containing the dimensions of this sprite object.
+     *
+     * @return Width and height as SpriteDimensionGroup.
+     */
+    public SpriteDimensionGroup getDimensions()
+    {
+        return DIMENSIONS;
+    }
+
     @Override
     public String getKey()
     {
@@ -85,16 +95,6 @@ public class SpriteObject implements Serializable, IAssetDataObject
     public String getPath()
     {
         return PATH;
-    }
-
-    /**
-     * A data object containing the dimensions of this sprite object.
-     *
-     * @return Width and height as SpriteDimensionGroup.
-     */
-    public SpriteDimensionGroup getDimensions()
-    {
-        return DIMENSIONS;
     }
 
 }
