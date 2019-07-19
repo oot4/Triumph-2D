@@ -6,11 +6,12 @@
 package application.dataobjects.interfaces;
 
 /**
- * Interface for a collection of asset data objects.
+ * Interface for a collection of asset data objects. Is creatable from a
+ * creational command tool that implements ICreate.
  *
  * @author Oge Tasie
  */
-public interface IAssetDataObjectCollection
+public interface IAssetDataObjectCollection extends ICreationToolCreatable
 {
 
     /**
