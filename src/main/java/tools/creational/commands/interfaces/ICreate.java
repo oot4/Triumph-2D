@@ -5,14 +5,15 @@
  */
 package tools.creational.commands.interfaces;
 
-import application.dataobjects.AssetKeyStore;
+import application.dataobjects.interfaces.ICreationToolCreatable;
 
 /**
  * Interface for a command that creates an asset key store.
  *
  * @author Oge Tasie
+ * @param <T> A creatable generic type.
  */
-public interface ICreateAssetKeyStore
+public interface ICreate<T extends ICreationToolCreatable>
 {
 
     /**
@@ -20,6 +21,6 @@ public interface ICreateAssetKeyStore
      *
      * @return An asset key store.
      */
-    AssetKeyStore create();
+    T execute();
 
 }
