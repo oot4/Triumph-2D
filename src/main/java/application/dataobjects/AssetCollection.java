@@ -11,7 +11,8 @@ import java.io.Serializable;
 import java.util.HashMap;
 
 /**
- * Class representing a collection of asset data objects.
+ * Class representing a collection of asset data objects. Implements
+ * IAssetDataObjectCollection and can be serialized.
  *
  * @author Oge Tasie
  */
