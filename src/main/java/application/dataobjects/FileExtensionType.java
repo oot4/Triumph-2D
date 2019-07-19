@@ -14,12 +14,12 @@ public enum FileExtensionType
 {
 
     /**
-     * File extension for images.
+     * File extension for image files.
      */
     gif,
 
     /**
-     * File extension for audio.
+     * File extension for audio files.
      */
     wav
 
