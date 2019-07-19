@@ -19,7 +19,7 @@ public enum SoundObjectType
     sfx,
 
     /**
-     * Music asset package.
+     * Music asset location.
      */
     music,
 

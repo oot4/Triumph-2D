@@ -6,7 +6,7 @@
 package application.dataobjects;
 
 /**
- * Enumerator for sprite object types.
+ * Enumerator for sprite data and object types.
  *
  * @author Oge Tasie
  */
