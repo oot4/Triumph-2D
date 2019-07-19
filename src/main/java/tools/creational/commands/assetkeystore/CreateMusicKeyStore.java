@@ -7,22 +7,22 @@ package tools.creational.commands.assetkeystore;
 
 import application.dataobjects.AssetKeyStore;
 import application.dataobjects.FileExtensionType;
-import application.dataobjects.SoundObject;
+import application.dataobjects.SoundDataObject;
 import application.dataobjects.SoundObjectType;
-import tools.creational.commands.interfaces.ICreateAssetKeyStore;
+import tools.creational.commands.interfaces.ICreate;
 
 /**
  * Creates an asset key store for music.
  *
  * @author Oge Tasie
  */
-public class CreateMusicKeyStore implements ICreateAssetKeyStore
+public class CreateMusicKeyStore implements ICreate
 {
 
     @Override
-    public AssetKeyStore create()
+    public AssetKeyStore execute()
     {
-        return AssetKeyStore.create( SoundObject.SOUND_DIR, SoundObjectType.music.name(), FileExtensionType.wav );
+        return AssetKeyStore.create(SoundDataObject.SOUND_DIR, SoundObjectType.music, FileExtensionType.wav );
     }
 
 }

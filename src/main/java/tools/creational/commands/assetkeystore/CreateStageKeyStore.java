@@ -7,22 +7,22 @@ package tools.creational.commands.assetkeystore;
 
 import application.dataobjects.AssetKeyStore;
 import application.dataobjects.FileExtensionType;
-import application.dataobjects.SpriteObject;
+import application.dataobjects.SpriteDataObject;
 import application.dataobjects.SpriteObjectType;
-import tools.creational.commands.interfaces.ICreateAssetKeyStore;
+import tools.creational.commands.interfaces.ICreate;
 
 /**
  * Creates an asset key store for stages.
  *
  * @author Oge Tasie
  */
-public class CreateStageKeyStore implements ICreateAssetKeyStore
+public class CreateStageKeyStore implements ICreate
 {
 
     @Override
-    public AssetKeyStore create()
+    public AssetKeyStore execute()
     {
-        return AssetKeyStore.create( SpriteObject.SPRITE_DIR, SpriteObjectType.stages.name(), FileExtensionType.gif );
+        return AssetKeyStore.create(SpriteDataObject.SPRITE_DIR, SpriteObjectType.stages, FileExtensionType.gif );
     }
 
 }

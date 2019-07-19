@@ -7,22 +7,22 @@ package tools.creational.commands.assetkeystore;
 
 import application.dataobjects.AssetKeyStore;
 import application.dataobjects.FileExtensionType;
-import application.dataobjects.SoundObject;
+import application.dataobjects.SoundDataObject;
 import application.dataobjects.SoundObjectType;
-import tools.creational.commands.interfaces.ICreateAssetKeyStore;
+import tools.creational.commands.interfaces.ICreate;
 
 /**
  * Creates an asset key store for sound effects.
  *
  * @author Oge Tasie
  */
-public class CreateSFXKeyStore implements ICreateAssetKeyStore
+public class CreateSFXKeyStore implements ICreate
 {
 
     @Override
-    public AssetKeyStore create()
+    public AssetKeyStore execute()
     {
-        return AssetKeyStore.create( SoundObject.SOUND_DIR, SoundObjectType.sfx.name(), FileExtensionType.wav );
+        return AssetKeyStore.create(SoundDataObject.SOUND_DIR, SoundObjectType.sfx, FileExtensionType.wav );
     }
 
 }

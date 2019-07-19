@@ -7,22 +7,22 @@ package tools.creational.commands.assetkeystore;
 
 import application.dataobjects.AssetKeyStore;
 import application.dataobjects.FileExtensionType;
-import application.dataobjects.SoundObject;
+import application.dataobjects.SoundDataObject;
 import application.dataobjects.SoundObjectType;
-import tools.creational.commands.interfaces.ICreateAssetKeyStore;
+import tools.creational.commands.interfaces.ICreate;
 
 /**
  * Creates an asset key store for voice-overs.
  *
  * @author Oge Tasie
  */
-public class CreateVoiceoverKeyStore implements ICreateAssetKeyStore
+public class CreateVoiceoverKeyStore implements ICreate
 {
 
     @Override
-    public AssetKeyStore create()
+    public AssetKeyStore execute()
     {
-        return AssetKeyStore.create( SoundObject.SOUND_DIR, SoundObjectType.voiceovers.name(), FileExtensionType.wav );
+        return AssetKeyStore.create(SoundDataObject.SOUND_DIR, SoundObjectType.voiceovers, FileExtensionType.wav );
     }
 
 }

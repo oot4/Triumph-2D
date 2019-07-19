@@ -7,22 +7,22 @@ package tools.creational.commands.assetkeystore;
 
 import application.dataobjects.AssetKeyStore;
 import application.dataobjects.FileExtensionType;
-import application.dataobjects.SpriteObject;
+import application.dataobjects.SpriteDataObject;
 import application.dataobjects.SpriteObjectType;
-import tools.creational.commands.interfaces.ICreateAssetKeyStore;
+import tools.creational.commands.interfaces.ICreate;
 
 /**
  * Creates an asset key store for characters.
  *
  * @author Oge Tasie
  */
-public class CreateCharacterKeyStore implements ICreateAssetKeyStore
+public class CreateCharacterKeyStore implements ICreate
 {
 
     @Override
-    public AssetKeyStore create()
+    public AssetKeyStore execute()
     {
-        return AssetKeyStore.create( SpriteObject.SPRITE_DIR, SpriteObjectType.characters.name(), FileExtensionType.gif );
+        return AssetKeyStore.create(SpriteDataObject.SPRITE_DIR, SpriteObjectType.characters, FileExtensionType.gif );
     }
 
 }

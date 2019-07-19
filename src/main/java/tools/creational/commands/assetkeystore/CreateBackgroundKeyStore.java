@@ -5,24 +5,21 @@
  */
 package tools.creational.commands.assetkeystore;
 
-import application.dataobjects.AssetKeyStore;
-import application.dataobjects.FileExtensionType;
-import application.dataobjects.SpriteObject;
-import application.dataobjects.SpriteObjectType;
-import tools.creational.commands.interfaces.ICreateAssetKeyStore;
+import application.dataobjects.*;
+import tools.creational.commands.interfaces.ICreate;
 
 /**
  * Creates an asset key store for background images.
  *
  * @author Oge Tasie
  */
-public class CreateBackgroundKeyStore implements ICreateAssetKeyStore
+public class CreateBackgroundKeyStore implements ICreate
 {
 
     @Override
-    public AssetKeyStore create()
+    public AssetKeyStore execute()
     {
-        return AssetKeyStore.create( SpriteObject.SPRITE_DIR, SpriteObjectType.backgrounds.name(), FileExtensionType.gif );
+        return AssetKeyStore.create( SpriteDataObject.SPRITE_DIR, SpriteObjectType.backgrounds, FileExtensionType.gif );
     }
 
 }
