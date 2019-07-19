@@ -8,7 +8,7 @@ package application.dataobjects.abstracts;
 import application.dataobjects.interfaces.IDimensionGroup;
 
 /**
- * Abstract class for dimensional data.
+ * Abstract class for dimensional data. Implements IDimensionGroup.
  *
  * @author Oge Tasie
  */
@@ -55,5 +55,5 @@ public abstract class AbstractDimensionGroup implements IDimensionGroup
     {
         return HEIGHT * SCALE;
     }
-    
+
 }
