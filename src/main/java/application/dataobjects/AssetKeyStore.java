@@ -11,7 +11,7 @@ import java.nio.file.FileSystems;
 import java.nio.file.Path;
 
 /**
- * Class representing a key store for assets.
+ * Class representing a key store for assets. Implements IAssetKeyStore.
  *
  * @author Oge Tasie
  */
@@ -19,14 +19,19 @@ public class AssetKeyStore implements IAssetKeyStore
 {
 
     /**
-     * An array contain asset file paths.
+     * An array containing asset file paths.
      */
-    private final File[] resourceFiles;
+    private final File[] RESOURCE_FILES;
 
     /**
      * The type of assets stored in this key store.
      */
-    private final String resourceType;
+    private final String RESOURCE_TYPE;
+
+    /**
+     * The type of file extension the assets in this key store have.
+     */
+    private final String FILE_EXTENSION;
 
     /**
      * Privately creates a new instance of an asset key store.
@@ -38,10 +43,11 @@ public class AssetKeyStore implements IAssetKeyStore
      * @param fileExtension The file extension of the resources this asset key
      *                      store will contain.
      */
-    private AssetKeyStore( String directory, String type, FileExtensionType fileExtension )
+    private AssetKeyStore( String directory, String resourceType, String fileExtension )
     {
-        resourceType = type;
-        resourceFiles = generateResourceKeys( directory, type, fileExtension );
+        RESOURCE_TYPE = resourceType;
+        FILE_EXTENSION = fileExtension;
+        RESOURCE_FILES = generateResourceKeys( directory, resourceType, fileExtension );
     }
 
     /**
@@ -56,9 +62,9 @@ public class AssetKeyStore implements IAssetKeyStore
      *
      * @return A new instance of an asset key store.
      */
-    public static AssetKeyStore create( String directory, String type, FileExtensionType fileExtension )
+    public static AssetKeyStore create( String directory, Enum type, FileExtensionType fileExtension )
     {
-        return new AssetKeyStore( directory, type, fileExtension );
+        return new AssetKeyStore( directory, type.name(), fileExtension.name() );
     }
 
     /**
@@ -72,16 +78,22 @@ public class AssetKeyStore implements IAssetKeyStore
      *
      * @return A file array containing the file paths to the assets.
      */
-    private File[] generateResourceKeys( String directory, String type, FileExtensionType fileExtension )
+    private File[] generateResourceKeys( String directory, String type, String fileExtension )
     {
         Path path = FileSystems.getDefault().getPath( directory + type );
-        return path.toFile().listFiles( ( File resourceKey, String name ) -> name.toLowerCase().endsWith( fileExtension.name() ) && new File( resourceKey, name ).isFile() );
+        return path.toFile().listFiles( ( File resourceKey, String name ) -> name.toLowerCase().endsWith( fileExtension ) && new File( resourceKey, name ).isFile() );
+    }
+
+    @Override
+    public FileExtensionType getFileExtensionType()
+    {
+        return FileExtensionType.valueOf( FILE_EXTENSION );
     }
 
     @Override
     public String getResourceType()
     {
-        return resourceType;
+        return RESOURCE_TYPE;
     }
 
     @Override
@@ -90,12 +102,12 @@ public class AssetKeyStore implements IAssetKeyStore
         String[] resourceKeys;
 
         resourceKeys = null;
-        if ( resourceFiles.length > 0 )
+        if ( RESOURCE_FILES.length > 0 )
         {
-            resourceKeys = new String[ resourceFiles.length ];
-            for ( int i = 0; i < resourceFiles.length; i++ )
+            resourceKeys = new String[ RESOURCE_FILES.length ];
+            for ( int i = 0; i < RESOURCE_FILES.length; i++ )
             {
-                resourceKeys[ i ] = resourceFiles[ i ].getName();
+                resourceKeys[ i ] = RESOURCE_FILES[ i ].getName();
             }
         }
         else
