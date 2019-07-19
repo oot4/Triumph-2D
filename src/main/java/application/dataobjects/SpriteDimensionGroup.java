@@ -6,13 +6,15 @@
 package application.dataobjects;
 
 import application.dataobjects.abstracts.AbstractDimensionGroup;
+import java.io.Serializable;
 
 /**
- * Class representing the dimensions for images on a sprite-sheet.
+ * Class representing the dimensions for images on a sprite-sheet. Extends
+ * AbstractDimensionGroup and can be serialized.
  *
  * @author Oge Tasie
  */
-public class SpriteDimensionGroup extends AbstractDimensionGroup
+public class SpriteDimensionGroup extends AbstractDimensionGroup implements Serializable
 {
 
     /**
