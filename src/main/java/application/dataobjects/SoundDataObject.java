@@ -9,20 +9,21 @@ import application.dataobjects.interfaces.IAssetDataObject;
 import java.io.Serializable;
 
 /**
- * Class representing a sound object. Implements IAssetDataObject.
+ * Class representing a sound object. Implements IAssetDataObject and can be
+ * serialized.
  *
  * @author Oge Tasie
  */
-public class SoundObject implements Serializable, IAssetDataObject
+public class SoundDataObject implements Serializable, IAssetDataObject
 {
 
     /**
-     * The key value of the sound object.
+     * The key value of the sound data object.
      */
     private final String KEY;
 
     /**
-     * The path location of the sound object.
+     * The path location of the sound data object.
      */
     private final String PATH;
 
@@ -32,14 +33,14 @@ public class SoundObject implements Serializable, IAssetDataObject
     public static final String SOUND_DIR = "src/main/java/assets/sounds/";
 
     /**
-     * Privately creates a new sound object instance.
+     * Privately creates a new sound data object instance.
      *
      * @param key  A key value as a string. Should be the name of the asset
      *             file.
      * @param path A path location pointing to the sound object on disk as a
      *             string.
      */
-    private SoundObject( String key, String path )
+    private SoundDataObject( String key, String path )
     {
         KEY = key;
         PATH = path;
@@ -52,9 +53,9 @@ public class SoundObject implements Serializable, IAssetDataObject
      *             file.
      * @param type What type of sound are you creating?
      *
-     * @return A new instance of a sound object.
+     * @return A new instance of a sound data object.
      */
-    public static SoundObject create( String key, SoundObjectType type )
+    public static SoundDataObject create( String key, SoundObjectType type )
     {
         final String path;
         String subPath;
@@ -62,7 +63,7 @@ public class SoundObject implements Serializable, IAssetDataObject
         subPath = type.toString() + "/" + key;
         path = "/assets/sounds/" + subPath;
 
-        return new SoundObject( key, path );
+        return new SoundDataObject( key, path );
     }
 
     @Override

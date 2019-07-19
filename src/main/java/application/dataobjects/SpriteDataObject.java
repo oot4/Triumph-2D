@@ -9,30 +9,31 @@ import application.dataobjects.interfaces.IAssetDataObject;
 import java.io.Serializable;
 
 /**
- * Class representing a sprite object. Implements IAssetDataObject.
+ * Class representing a sprite data object. Implements IAssetDataObject and can be
+ * serialized.
  *
  * @author Oge Tasie
  */
-public class SpriteObject implements Serializable, IAssetDataObject
+public class SpriteDataObject implements Serializable, IAssetDataObject
 {
 
     /**
-     * The key value of the sprite object.
+     * The key value of the sprite data object.
      */
     private final String KEY;
 
     /**
-     * The path location of the sound object.
+     * The path location of the sprite data object.
      */
     private final String PATH;
 
     /**
-     * The dimensions associated with this object.
+     * The dimensions associated with this data object.
      */
     private final SpriteDimensionGroup DIMENSIONS;
 
     /**
-     * The path to the location of sound resources.
+     * The path to the root location of sprite resources.
      */
     public static final String SPRITE_DIR = "src/main/java/assets/sprites/";
 
@@ -46,7 +47,7 @@ public class SpriteObject implements Serializable, IAssetDataObject
      * @param dimensions A data object containing the dimensions used for
      *                   finding sub-images on a sprite-sheet.
      */
-    private SpriteObject( String key, String path, SpriteDimensionGroup dimensions )
+    private SpriteDataObject( String key, String path, SpriteDimensionGroup dimensions )
     {
         KEY = key;
         PATH = path;
@@ -54,7 +55,7 @@ public class SpriteObject implements Serializable, IAssetDataObject
     }
 
     /**
-     * Creates a new sprite object.
+     * Creates a new sprite data object.
      *
      * @param key        A key value as a string. Should be the name of the
      *                   asset file.
@@ -62,9 +63,9 @@ public class SpriteObject implements Serializable, IAssetDataObject
      * @param dimensions A data object containing dimensional data for the
      *                   sprite-sheet.
      *
-     * @return A new instance of a sprite object.
+     * @return A new instance of a sprite data object.
      */
-    public static SpriteObject create( String key, SpriteObjectType type, SpriteDimensionGroup dimensions )
+    public static SpriteDataObject create( String key, SpriteObjectType type, SpriteDimensionGroup dimensions )
     {
         final String path;
         String subPath;
@@ -72,11 +73,11 @@ public class SpriteObject implements Serializable, IAssetDataObject
         subPath = type.toString() + "/" + key;
         path = "/assets/sprites/" + subPath;
 
-        return new SpriteObject( key, path, dimensions );
+        return new SpriteDataObject( key, path, dimensions );
     }
 
     /**
-     * A data object containing the dimensions of this sprite object.
+     * A data object containing the dimensions of this sprite data object.
      *
      * @return Width and height as SpriteDimensionGroup.
      */
