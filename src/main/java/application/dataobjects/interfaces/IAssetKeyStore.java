@@ -5,21 +5,31 @@
  */
 package application.dataobjects.interfaces;
 
+import application.dataobjects.FileExtensionType;
+
 /**
- * Interface for an asset key store to store asset file keys.
+ * Interface for an asset key store to store asset file keys. Is creatable from
+ * a creational command tool that implements ICreate.
  *
  * @author Oge Tasie
  */
-public interface IAssetKeyStore
+public interface IAssetKeyStore extends ICreationToolCreatable
 {
 
     /**
      * Returns the type of the resources the keys are associated with.
      *
-     * @return A resource type as a String. These correspond to the sprite and
+     * @return A resource type as a string. These correspond to the sprite and
      *         sound object types.
      */
     String getResourceType();
+
+    /**
+     * Returns the type of the file extension the resources have.
+     *
+     * @return A file extension type as an enumerator.
+     */
+    FileExtensionType getFileExtensionType();
 
     /**
      * Returns the resource names located at the resource path location.
