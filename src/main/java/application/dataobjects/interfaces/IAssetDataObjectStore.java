@@ -11,7 +11,7 @@ package application.dataobjects.interfaces;
  *
  * @author Oge Tasie
  */
-public interface IAssetDataObjectCollection extends ICreationToolCreatable
+public interface IAssetDataObjectStore extends ICreationToolCreatable
 {
 
     /**

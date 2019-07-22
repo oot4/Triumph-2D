@@ -1,3 +1,4 @@
+
 /*
  * Triumph 2D project files, related assets and related source code were created by, Ogesoka Tasie
  * and should not be copied or distributed without consent of the creator (Oge Tasie).
@@ -6,9 +7,9 @@
 package application.dataobjects;
 
 import application.dataobjects.interfaces.IAssetDataObject;
-import application.dataobjects.interfaces.IAssetDataObjectCollection;
 import java.io.Serializable;
 import java.util.HashMap;
+import application.dataobjects.interfaces.IAssetDataObjectStore;
 
 /**
  * Class representing a collection of asset data objects. Implements
@@ -16,7 +17,7 @@ import java.util.HashMap;
  *
  * @author Oge Tasie
  */
-public class AssetCollection implements Serializable, IAssetDataObjectCollection
+public class AssetDataObjectStore implements Serializable, IAssetDataObjectStore
 {
 
     /**
@@ -29,7 +30,7 @@ public class AssetCollection implements Serializable, IAssetDataObjectCollection
      *
      * @param assets A collection of assets as a hash map.
      */
-    private AssetCollection( HashMap<String, IAssetDataObject> assets )
+    private AssetDataObjectStore( HashMap<String, IAssetDataObject> assets )
     {
         ASSETS = assets;
     }
@@ -41,9 +42,9 @@ public class AssetCollection implements Serializable, IAssetDataObjectCollection
      *
      * @return A new instance of an asset collection.
      */
-    public static AssetCollection create( HashMap<String, IAssetDataObject> assets )
+    public static AssetDataObjectStore create( HashMap<String, IAssetDataObject> assets )
     {
-        return new AssetCollection( assets );
+        return new AssetDataObjectStore( assets );
     }
 
     @Override
