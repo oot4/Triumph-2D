@@ -31,7 +31,7 @@ public class AssetKeyStore implements IAssetKeyStore
     /**
      * The type of file extension the assets in this key store have.
      */
-    private final String FILE_EXTENSION;
+    private final FileExtensionType FILE_EXTENSION;
 
     /**
      * Privately creates a new instance of an asset key store.
@@ -43,11 +43,11 @@ public class AssetKeyStore implements IAssetKeyStore
      * @param fileExtension The file extension of the resources this asset key
      *                      store will contain.
      */
-    private AssetKeyStore( String directory, String resourceType, String fileExtension )
+    private AssetKeyStore( String directory, String resourceType, FileExtensionType fileExtension )
     {
         RESOURCE_TYPE = resourceType;
         FILE_EXTENSION = fileExtension;
-        RESOURCE_FILES = generateResourceKeys( directory, resourceType, fileExtension );
+        RESOURCE_FILES = generateResourceKeys( directory, resourceType, fileExtension.name() );
     }
 
     /**
@@ -64,7 +64,7 @@ public class AssetKeyStore implements IAssetKeyStore
      */
     public static AssetKeyStore create( String directory, Enum type, FileExtensionType fileExtension )
     {
-        return new AssetKeyStore( directory, type.name(), fileExtension.name() );
+        return new AssetKeyStore( directory, type.name(), fileExtension );
     }
 
     /**
@@ -87,7 +87,7 @@ public class AssetKeyStore implements IAssetKeyStore
     @Override
     public FileExtensionType getFileExtensionType()
     {
-        return FileExtensionType.valueOf( FILE_EXTENSION );
+        return FILE_EXTENSION;
     }
 
     @Override
