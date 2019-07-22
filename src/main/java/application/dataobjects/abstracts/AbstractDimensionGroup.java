@@ -18,17 +18,17 @@ public abstract class AbstractDimensionGroup implements IDimensionGroup
     /**
      * A width dimension.
      */
-    private final int WIDTH;
+    protected final int WIDTH;
 
     /**
      * A height dimension.
      */
-    private final int HEIGHT;
+    protected final int HEIGHT;
 
     /**
      * A scale dimension. Is applied to a width and height.
      */
-    private final int SCALE;
+    protected final int SCALE;
 
     /**
      * Default constructor for creating new dimensional data.
@@ -37,7 +37,7 @@ public abstract class AbstractDimensionGroup implements IDimensionGroup
      * @param height A raw height value before scaling.
      * @param scale  A scaling factor.
      */
-    public AbstractDimensionGroup( int width, int height, int scale )
+    protected AbstractDimensionGroup( int width, int height, int scale )
     {
         WIDTH = width;
         HEIGHT = height;
