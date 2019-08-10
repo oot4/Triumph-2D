@@ -14,9 +14,10 @@ import java.io.Serializable;
  *
  * @author Oge Tasie
  */
-@SuppressWarnings( "serial" )
 public class SpriteDimension extends AbstractDimension<SpriteDimension> implements Serializable
 {
+
+    private static final long serialVersionUID = 1L;
 
     /**
      * Creates a new instance of a dimension for images on a sprite-sheet.

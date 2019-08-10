@@ -36,16 +36,14 @@ public class SpriteFileNameGenerator extends AbstractFileNameGenerator<SpriteCon
     /**
      * Creates a new sprite file name generator.
      *
-     * @param conclave  The type of conclave package location constant to
-     *                  generate file names for.
-     * @param extension The type of file extension to match against when
-     *                  searching the conclave package location for files.
+     * @param conclave The type of conclave package location constant to
+     *                 generate file names for.
      *
      * @return A new instance of {@code SpriteFileNameGenerator}.
      */
-    public static SpriteFileNameGenerator create( SpriteConclave conclave, PathAnnexConclave extension )
+    public static SpriteFileNameGenerator create( SpriteConclave conclave )
     {
-        return new SpriteFileNameGenerator( "src/main/java/assets/sprites/", conclave, extension );
+        return new SpriteFileNameGenerator( "src/main/java/assets/sprites/", conclave, PathAnnexConclave.gif );
     }
 
 }

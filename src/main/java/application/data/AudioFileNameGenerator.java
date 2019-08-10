@@ -38,14 +38,12 @@ public class AudioFileNameGenerator extends AbstractFileNameGenerator<AudioConcl
      *
      * @param conclave  The type of conclave package location constant to
      *                  generate file names for.
-     * @param extension The type of file extension to match against when
-     *                  searching the conclave package location for files.
      *
      * @return A new instance of {@code AudioFileNameGenerator}.
      */
-    public static AudioFileNameGenerator create( AudioConclave conclave, PathAnnexConclave extension )
+    public static AudioFileNameGenerator create( AudioConclave conclave )
     {
-        return new AudioFileNameGenerator( "src/main/java/assets/audio/", conclave, extension );
+        return new AudioFileNameGenerator( "src/main/java/assets/audio/", conclave, PathAnnexConclave.wav );
     }
 
 }
