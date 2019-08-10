@@ -3,38 +3,34 @@
  * and should not be copied or distributed without consent of the creator (Oge Tasie).
  * All Rights Reserved.
  */
-package application.dataobjects;
+package application.data.conclave;
 
 /**
- * Enumerator for sprite data and object types.
+ * A conclave containing the package location of sprites.
  *
  * @author Oge Tasie
  */
-public enum SpriteObjectType
+public enum SpriteConclave
 {
 
     /**
-     * Character sprite-sheet asset location.
+     * Character sprite-sheets location.
      */
     characters,
-
     /**
-     * Stage sprite-sheet asset location.
+     * Stage sprite-sheets location.
      */
     stages,
-
     /**
-     * Background image asset location.
+     * Background images location.
      */
     backgrounds,
-
     /**
-     * UI element asset location.
+     * User-interface images location.
      */
     uielements,
-
     /**
-     * Font asset location.
+     * Font images location.
      */
     fonts
 

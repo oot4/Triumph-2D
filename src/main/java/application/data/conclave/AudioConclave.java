@@ -3,24 +3,29 @@
  * and should not be copied or distributed without consent of the creator (Oge Tasie).
  * All Rights Reserved.
  */
-package application.dataobjects;
+package application.data.conclave;
 
 /**
- * Enumerator for file extension types compatible with the file store.
+ * A conclave containing the package location of audio.
  *
  * @author Oge Tasie
  */
-public enum FileExtensionType
+public enum AudioConclave
 {
 
     /**
-     * File extension for image files.
+     * Special effect audio location.
      */
-    gif,
+    sfx,
 
     /**
-     * File extension for audio files.
+     * Music audio location.
      */
-    wav
+    music,
+
+    /**
+     * Voiceover audio location.
+     */
+    voiceovers
 
 }

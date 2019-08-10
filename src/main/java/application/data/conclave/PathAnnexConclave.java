@@ -3,29 +3,30 @@
  * and should not be copied or distributed without consent of the creator (Oge Tasie).
  * All Rights Reserved.
  */
-package application.dataobjects;
+package application.data.conclave;
 
 /**
- * Enumerator for sound object types.
+ * A conclave containing the filename extension the application currently
+ * supports.
  *
  * @author Oge Tasie
  */
-public enum SoundObjectType
+public enum PathAnnexConclave
 {
 
     /**
-     * Sound effects asset location.
+     * Graphic Interchange Format files (GIF).
      */
-    sfx,
+    gif,
 
     /**
-     * Music asset location.
+     * Waveform Audio Format files (WAV).
      */
-    music,
+    wav,
 
     /**
-     * Voiceover asset location.
+     * Triumph 2D Object State file (TROS).
      */
-    voiceovers
+    tros
 
 }
