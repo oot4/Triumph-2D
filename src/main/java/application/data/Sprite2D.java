@@ -16,7 +16,7 @@ public class Sprite2D
 {
 
     /**
-     * This class cannot be instantiated.
+     * This class cannot be instantiated outside of itself.
      */
     private Sprite2D()
     {
@@ -72,13 +72,22 @@ public class Sprite2D
         return DimensionHolder.FONT;
     }
 
+    /**
+     * Returns the matching dimension to the specified sprite conclave type.
+     *
+     * @param conclave The type of sprite conclave used to determine the
+     *                 resulting sprite dimension.
+     *
+     * @return A dimension of with, height and scale as a
+     *         {@code SpriteDimension}.
+     */
     public static SpriteDimension getDimension( SpriteConclave conclave )
     {
         return DimensionHolder.getDimension( conclave );
     }
 
     /**
-     * Class representing a holder for an instance of Sprite2D.
+     * Class representing a holder of dimension instances.
      */
     private static class DimensionHolder
     {
@@ -108,10 +117,22 @@ public class Sprite2D
          */
         private static final SpriteDimension FONT = new SpriteDimension( 1, 1, 1 );
 
+        /**
+         * This class cannot be instantiated outside of its super class.
+         */
         private DimensionHolder()
         {
         }
 
+        /**
+         * Returns the matching dimension to the specified sprite conclave type.
+         *
+         * @param conclave The type of sprite conclave used to determine the
+         *                 resulting sprite dimension.
+         *
+         * @return A dimension of with, height and scale as a
+         *         {@code SpriteDimension}.
+         */
         private static SpriteDimension getDimension( SpriteConclave conclave )
         {
             switch ( conclave )
@@ -128,7 +149,6 @@ public class Sprite2D
                     return FONT;
                 default:
                     throw new AssertionError( conclave.name() );
-
             }
         }
     }
