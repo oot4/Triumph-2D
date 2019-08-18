@@ -9,6 +9,7 @@ import application.data.abstracts.AbstractFileDataStore;
 import application.data.abstracts.AbstractFileNameGenerator;
 import application.data.conclave.PathAnnexConclave;
 import application.data.conclave.SpriteConclave;
+import application.tools.OBSConverter;
 import java.io.Serializable;
 import java.util.HashMap;
 
@@ -44,6 +45,7 @@ public final class SpriteFileDataStore extends AbstractFileDataStore<SpriteFileD
     {
         SpriteFileDataStore store = new SpriteFileDataStore();
         store.DATA.putAll( store.populate( generator ) );
+        OBSConverter.SerializeObject( generator.getConclaveType().toString(), store );
         return store;
     }
 
@@ -60,6 +62,7 @@ public final class SpriteFileDataStore extends AbstractFileDataStore<SpriteFileD
             String key = fileName.split( "." + fileExtension, 2 )[ 0 ];
             String path = "/assets/audio/" + conclaveType + "/" + fileName;
             SpriteFileData value = SpriteFileData.create( fileName, path, dimension );
+//            OBSConverter.SerializeObject( key, value );
             data.put( key, value );
         }
         return data;

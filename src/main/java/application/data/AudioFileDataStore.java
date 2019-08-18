@@ -9,6 +9,7 @@ import application.data.abstracts.AbstractFileDataStore;
 import application.data.abstracts.AbstractFileNameGenerator;
 import application.data.conclave.AudioConclave;
 import application.data.conclave.PathAnnexConclave;
+import application.tools.OBSConverter;
 import java.io.Serializable;
 import java.util.HashMap;
 
@@ -44,6 +45,7 @@ public final class AudioFileDataStore extends AbstractFileDataStore<AudioFileDat
     {
         AudioFileDataStore store = new AudioFileDataStore();
         store.DATA.putAll( store.populate( generator ) );
+        OBSConverter.SerializeObject( generator.getConclaveType().toString(), store );
         return store;
     }
 
@@ -59,6 +61,7 @@ public final class AudioFileDataStore extends AbstractFileDataStore<AudioFileDat
             String key = fileName.split( "." + fileExtension, 2 )[ 0 ];
             String path = "/assets/audio/" + conclaveType + "/" + fileName;
             AudioFileData value = AudioFileData.create( fileName, path );
+//            OBSConverter.SerializeObject( key, value );
             data.put( key, value );
         }
         return data;
