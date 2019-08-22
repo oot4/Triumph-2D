@@ -3,15 +3,15 @@
  * and should not be copied or distributed without consent of the creator (Oge Tasie).
  * All Rights Reserved.
  */
-package application.tools.tasks;
+package application.tasks;
 
+import application.tasks.abstracts.AbstractTaskContainer;
 import application.data.AudioFileDataStore;
 import application.data.AudioFileNameGenerator;
 import application.data.SpriteFileDataStore;
 import application.data.SpriteFileNameGenerator;
 import application.data.conclave.AudioConclave;
 import application.data.conclave.SpriteConclave;
-import application.tools.AbstractTaskContainer;
 import java.beans.PropertyChangeListener;
 import javax.swing.SwingUtilities;
 

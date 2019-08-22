@@ -3,7 +3,7 @@
  * and should not be copied or distributed without consent of the creator (Oge Tasie).
  * All Rights Reserved.
  */
-package application.tools;
+package application.tasks.abstracts;
 
 import javax.swing.SwingWorker;
 

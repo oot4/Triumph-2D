@@ -44,8 +44,9 @@ public final class SpriteFileDataStore extends AbstractFileDataStore<SpriteFileD
     public static SpriteFileDataStore create( AbstractFileNameGenerator<SpriteConclave, PathAnnexConclave> generator )
     {
         SpriteFileDataStore store = new SpriteFileDataStore();
+        String name = generator.getConclaveType().toString();
         store.DATA.putAll( store.populate( generator ) );
-        OBSConverter.SerializeObject( generator.getConclaveType().toString(), store );
+        OBSConverter.SerializeObject( name, store );
         return store;
     }
 

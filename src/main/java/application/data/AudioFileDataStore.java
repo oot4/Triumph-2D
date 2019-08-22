@@ -44,8 +44,9 @@ public final class AudioFileDataStore extends AbstractFileDataStore<AudioFileDat
     public static AudioFileDataStore create( AbstractFileNameGenerator<AudioConclave, PathAnnexConclave> generator )
     {
         AudioFileDataStore store = new AudioFileDataStore();
+        String name = generator.getConclaveType().toString();
         store.DATA.putAll( store.populate( generator ) );
-        OBSConverter.SerializeObject( generator.getConclaveType().toString(), store );
+        OBSConverter.SerializeObject( name, store );
         return store;
     }
 
